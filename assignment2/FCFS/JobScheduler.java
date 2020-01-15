@@ -9,6 +9,8 @@ public class JobScheduler
 	private int maxWaitingTime=0;
 	private int avgWaitingTime=0;
 	ArrayList<InputProcesses> inputProcess=new ArrayList<InputProcesses>();
+	
+	//Taking the Arrival time and Burst time of the processes from the user.
 	void takeProcess()
 	{
 		System.out.println("FIRST COME FIRST SERVE");
@@ -28,6 +30,7 @@ public class JobScheduler
 		ins.close();
 	}
 
+	//Sorting the processes on the basis of the arrival time of processes.
 	void sortProcessWithArrivalTime(int numberOfProcess)
 	{
 		for(int i=0;i<numberOfProcess;i++)
@@ -48,6 +51,7 @@ public class JobScheduler
 		calculateCompletionTime(numberOfProcess);
 	}
 
+	//We are calculating the completion time of each process and storing it in the array.
 	void calculateCompletionTime(int numberOfProcess)
 	{
 		int temp=inputProcess.get(0).getArrivalTime()+inputProcess.get(0).getBurstTime();
@@ -68,6 +72,7 @@ public class JobScheduler
 		calculateWaitingTime(numberOfProcess);
 	}
 
+	//We are calculating the waiting time of each process and storing it in the array.
 	void calculateWaitingTime(int numberOfProcess)
 	{
 		waitingTime.add(0);
@@ -85,7 +90,8 @@ public class JobScheduler
 		}
 		calculateTurnAroundTime(numberOfProcess);
 	}
-
+	
+	//We are calculating the turnaround time of each process and storing it in the array.
 	void calculateTurnAroundTime(int numberOfProcess)
 	{
 		for(int i=0;i<numberOfProcess;i++)
@@ -96,6 +102,7 @@ public class JobScheduler
 		avgAndMaxWaitingTime(numberOfProcess);
 	}
 
+	//We are calculating the average waiting time and maximum waiting time for the processes given by the user.
 	void avgAndMaxWaitingTime(int numberOfProcess)
 	{	
 		int totalWaitingTime=waitingTime.get(0);
@@ -112,6 +119,7 @@ public class JobScheduler
 		showResults(numberOfProcess);
 	}
 
+	//We are showing the results to the user.
 	void showResults(int numberOfProcess)
 	{
 		System.out.println("ArrivalTime\tBurstTime\tCompletionTime\tWaitingTime\tTurnAroundTime");
@@ -123,6 +131,7 @@ public class JobScheduler
 		end();
 	}
 
+	//Ending the program with Thanks!
 	void end()
 	{
 		System.out.println("Thanks!");
