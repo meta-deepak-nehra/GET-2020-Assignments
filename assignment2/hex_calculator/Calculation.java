@@ -4,6 +4,7 @@ public class Calculation
 	private String hexNumber1, hexNumber2,outputHexNumber;
 	private int intNumber1,intNumber2,outputIntNumber;
 	
+	//We are showing the Welcome screen to the user.
 	void welcomeScreen()
 	{
 		Scanner inr = new Scanner(System.in);
@@ -45,6 +46,7 @@ public class Calculation
 		inr.close();
 	}
 	
+	//We are taking the Hexadecimal number from the user.
 	void getData()
 	{
 		Scanner sc = new Scanner(System.in);
@@ -58,6 +60,7 @@ public class Calculation
 		sc.close();
 	}
 	
+	//Finding the addition of the given Hexadecimal Numbers.
 	void addition()
 	{
 		getData();
@@ -68,6 +71,7 @@ public class Calculation
 		end();
 	}
 	
+	//Finding the subtraction of the given Hexadecimal Numbers.
 	void difference()
 	{
 		getData();
@@ -81,6 +85,7 @@ public class Calculation
 		end();
 	}
 	
+	//Finding the multiplication of the given Hexadecimal Numbers.
 	void multiply()
 	{
 		getData();
@@ -91,6 +96,7 @@ public class Calculation
 		end();
 	}
 	
+	//Finding the division of the given Hexadecimal Numbers.
 	void divide()
 	{
 		getData();
@@ -101,6 +107,7 @@ public class Calculation
 		end();
 	}
 	
+	//Comparing the given Hexadecimal numbers.
 	void compare()
 	{
 		Scanner sc = new Scanner(System.in);
@@ -125,6 +132,8 @@ public class Calculation
 		sc.close();
 		end();
 	}
+	
+	//Ending the program with Thanks!
 	void end()
 	{
 		System.out.println("Thanks!");
