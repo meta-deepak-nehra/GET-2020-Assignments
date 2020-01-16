@@ -42,8 +42,10 @@ public class JobScheduler
 					int temp=inputProcess.get(i).getArrivalTime();
 					int temp1=inputProcess.get(i).getBurstTime();
 					InputProcesses Process= new InputProcesses(inputProcess.get(j).getArrivalTime(),inputProcess.get(j).getBurstTime());
+					inputProcess.remove(i);
 					inputProcess.add(i, Process);
 					InputProcesses Process1= new InputProcesses(temp,temp1);
+					inputProcess.remove(j);
 					inputProcess.add(j,Process1);
 				}
 			}
@@ -123,7 +125,7 @@ public class JobScheduler
 	void showResults(int numberOfProcess)
 	{
 		System.out.println("ArrivalTime\tBurstTime\tCompletionTime\tWaitingTime\tTurnAroundTime");
-		for(int i=0;i<numberOfProcess;i++)
+		for(int i=0;i<inputProcess.size();i++)
 		{	
 			System.out.printf("%-15d %-15d %-15d %-15d %-15d\n",inputProcess.get(i).getArrivalTime(),inputProcess.get(i).getBurstTime(),completionTime.get(i),waitingTime.get(i),turnAroundTime.get(i));
 		}
