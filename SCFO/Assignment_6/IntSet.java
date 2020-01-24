@@ -3,23 +3,28 @@ import java.util.ArrayList;
 public final class IntSet 
 {
 	private int[] setOfValues;
-
+	private int lengthOfSet;
 	
-	void setDataToTheArray(int[] arrayToSetValues)
+	public void setDataToTheArray(int[] arrayToSetValues)
 	{
 		if(arrayToSetValues.length==0)
 		{
 			System.out.println("Set is null. Can't perform any operation.");
+			System.exit(0);
 		}
-		setOfValues = arrayToSetValues;
+		lengthOfSet=arrayToSetValues.length;
+		setOfValues=new int[lengthOfSet];
+		for(int i=0;i<arrayToSetValues.length;i++)
+			setOfValues[i] = arrayToSetValues[i];
+		setOfValues=arrayToSetValues.clone();
 	}
 	
-	boolean isMember(int value)
+	public boolean isMemberOfSet(int value)
 	{
-		int length = setOfValues.length;
-		for (int i=0;i<=length;i++)
+	//	int length = setOfValues.length;
+		for (int i=0;i<lengthOfSet;i++)
 		{
-			if(value == setOfValues[i])
+			if(setOfValues[i]==value)
 			{
 				return true;
 			}
@@ -32,7 +37,7 @@ public final class IntSet
 		return setOfValues.length;
 	}
 	
-	boolean isSubSet(int[] s)
+	public boolean isSubSet(int[] s)
 	{
 		int lengthOfSubset= s.length,lengthOfSet= setOfValues.length;
 		for(int i=0;i<lengthOfSubset;i++)
@@ -52,39 +57,46 @@ public final class IntSet
 		return true;
 	}
 	
-	int[] getComplement()
+	public int[] getComplement()
 	{
-		int targetSetLength = setOfValues.length;
-		int[] complementArray = new int [1000 - targetSetLength];
-		int complementArrayIndex = 0;
-		for (int i=0;i<=1000;i++)
-		{
-			boolean flag = false;
-		    for(int j = 0; j < this.size(); j++)
-		    {
-	         	if(setOfValues[j] == i)
-		        {
-		          flag = true;
-		          break;
-		        }
-		     }
-		    if(flag != true)
-		    {
-		        complementArray[complementArrayIndex] = i;
-		        complementArrayIndex++;
-		    }
+		int targetSetLength=setOfValues.length;
+		int[] complementArray=new int[100-targetSetLength];
+		//int complementArrayIndex=0;
+//		for (int i=1;i<=100;i++)
+//		{
+//			boolean flag = false;
+//		    for(int j=0;j<targetSetLength;j++)
+//		    {
+//	         	if(setOfValues[j]==i)
+//		        {
+//		          flag= true;
+//		          break;
+//		        }
+//		     }
+//		    if(flag!=true)
+//		    {
+//		        complementArray[complementArrayIndex]=i;
+//		        complementArrayIndex++;
+//		    }
+//		}
+		int j=0;
+		for(int i=1;i<=100;i++){
+			if(!isMemberOfSet(i)){
+				complementArray[j]=i;
+				j++;
+			}
 		}
 		return complementArray;
 	}
 	
-	public static void main(String[] args) 
+	/*public static void main(String[] args) 
 	{
 		int a[]={1,2,13,4};
 		int b[]={5,6,7,8,9,0};
 		union(a,b);
-	}
+	}*/
 	
-	static int[] union(int[] set1,int[] set2)
+	public int[] union(int[] set1,int[] set2)
     {
 		int[] resultArray={};
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
@@ -101,8 +113,8 @@ public final class IntSet
         }
         resultArray = arrayList.stream().mapToInt(i->i).toArray();
         
-        for(int element:resultArray)
-        	System.out.println(element);
+//        for(int element:resultArray)
+//        	System.out.println(element);
     	
     	return  resultArray;
     }
