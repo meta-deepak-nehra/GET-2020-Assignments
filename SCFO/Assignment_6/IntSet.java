@@ -5,7 +5,11 @@ public final class IntSet
 	private int[] setOfValues;
 	private int lengthOfSet;
 	
-	public void setDataToTheArray(int[] arrayToSetValues)
+	/**
+	 * Parameterized constructor
+	 * @param arrayToSetValues Passed as argument of constructor
+	 */
+	public IntSet(int[] arrayToSetValues)
 	{
 		if(arrayToSetValues.length==0)
 		{
@@ -14,14 +18,16 @@ public final class IntSet
 		}
 		lengthOfSet=arrayToSetValues.length;
 		setOfValues=new int[lengthOfSet];
-		for(int i=0;i<arrayToSetValues.length;i++)
-			setOfValues[i] = arrayToSetValues[i];
 		setOfValues=arrayToSetValues.clone();
 	}
 	
+	/**
+	 * Function will check that given element is in set or not
+	 * @param value Element which we have to check.
+	 * @return Return True if it present else return False
+	 */
 	public boolean isMemberOfSet(int value)
 	{
-	//	int length = setOfValues.length;
 		for (int i=0;i<lengthOfSet;i++)
 		{
 			if(setOfValues[i]==value)
@@ -32,11 +38,20 @@ public final class IntSet
 		return false;
 	}
 	
+	/**
+	 * Check the size of the set.
+	 * @return Returns the size of the set.
+	 */
 	int size()
 	{
 		return setOfValues.length;
 	}
 	
+	/**
+	 * Checks whether the given set is subset or not
+	 * @param s subset passed as argument for checking 
+	 * @return Return True if it is subset else false
+	 */
 	public boolean isSubSet(int[] s)
 	{
 		int lengthOfSubset= s.length,lengthOfSet= setOfValues.length;
@@ -57,45 +72,41 @@ public final class IntSet
 		return true;
 	}
 	
+	/**
+	 * Gives us the complement of the set
+	 * @return Return a set which is complement of given set
+	 */
 	public int[] getComplement()
 	{
 		int targetSetLength=setOfValues.length;
 		int[] complementArray=new int[100-targetSetLength];
-		//int complementArrayIndex=0;
-//		for (int i=1;i<=100;i++)
-//		{
-//			boolean flag = false;
-//		    for(int j=0;j<targetSetLength;j++)
-//		    {
-//	         	if(setOfValues[j]==i)
-//		        {
-//		          flag= true;
-//		          break;
-//		        }
-//		     }
-//		    if(flag!=true)
-//		    {
-//		        complementArray[complementArrayIndex]=i;
-//		        complementArrayIndex++;
-//		    }
-//		}
-		int j=0;
-		for(int i=1;i<=100;i++){
-			if(!isMemberOfSet(i)){
-				complementArray[j]=i;
-				j++;
-			}
+		int complementArrayIndex=0;
+		for (int i=1;i<=100;i++)
+		{
+			boolean flag = false;
+		    for(int j=0;j<targetSetLength;j++)
+		    {
+	         	if(setOfValues[j]==i)
+		        {
+		          flag= true;
+		          break;
+		        }
+		     }
+		    if(flag!=true)
+		    {
+		        complementArray[complementArrayIndex]=i;
+		        complementArrayIndex++;
+		    }
 		}
 		return complementArray;
 	}
-	
-	/*public static void main(String[] args) 
-	{
-		int a[]={1,2,13,4};
-		int b[]={5,6,7,8,9,0};
-		union(a,b);
-	}*/
-	
+
+	/**
+	 * Gives us union of two sets
+	 * @param set1 Set one for the union given as argument
+	 * @param set2 Set two for the union given as argument
+	 * @return Return the union of these two sets
+	 */
 	public int[] union(int[] set1,int[] set2)
     {
 		int[] resultArray={};
@@ -112,10 +123,7 @@ public final class IntSet
             }
         }
         resultArray = arrayList.stream().mapToInt(i->i).toArray();
-        
-//        for(int element:resultArray)
-//        	System.out.println(element);
-    	
+
     	return  resultArray;
     }
 }

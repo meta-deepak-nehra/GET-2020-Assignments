@@ -1,12 +1,14 @@
 import java.util.Scanner;
-
-
 public class MainForIntSet 
 {
+	/**
+	 * Main function for running the program
+	 * @param args String argument as input to mian
+	 */
 	public static void main(String[] args) 
 	{
 		Scanner inr = new Scanner(System.in);
-		IntSet obj= new IntSet();
+		
 		System.out.println("Enter the number of values of set");
 		int ab=inr.nextInt();
 		int setToPass[]=new int[ab];
@@ -16,7 +18,7 @@ public class MainForIntSet
 			int s=inr.nextInt();
 			setToPass[i]=s;
 		}	
-		obj.setDataToTheArray(setToPass);
+		IntSet obj= new IntSet(setToPass);
 		System.out.println("Please choose from following options");
 		System.out.println("1.Check whether following element is present in set or not");
 		System.out.println("2.Size of set");
@@ -59,7 +61,6 @@ public class MainForIntSet
 			break;
 		case 4:	
 			int[] resultComplement=obj.getComplement();
-//			resultComplement=obj.getComplement();	
 			System.out.println("Complement is:");
 			for(int i=0;i<resultComplement.length;i++)
 			{
