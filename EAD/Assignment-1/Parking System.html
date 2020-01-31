@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        input {
+            width: 350px;
+            height: 30px;
+            margin: 20px;
+        }
+        
+        input[type="button"],
+        input[type="submit"] {
+            width: 300px;
+            height: 30px;
+            margin: 30px;
+        }
+        
+        textarea {
+            width: 350px;
+            height: 60px;
+            margin: 20px;
+            resize: none;
+        }
+        
+        form {
+            text-align: center;
+        }
+        
+        #vehicleType {
+            width: 355px;
+            height: 36px;
+            margin: 20px;
+        }
+        
+        #passType {
+            width: 100px;
+            height: 37px;
+            margin: 20px;
+        }
+        
+        #passForm {
+            display: none;
+        }
+        
+        #conversionForm {
+            display: none;
+        }
+        
+        #passAmount,
+        #payableAmount {
+            width: 100px;
+            height: 37px;
+            margin: 20px;
+        }
+        
+        h1 {
+            color: black;
+        }
+        
+        h2 {
+            color: black;
+        }
+        
+        b {
+            color: black;
+        }
+    </style>
+    <script>
+        var empCount = 27;
+
+        function Registered() {
+            var name = document.getElementById("empName").value;
+            var email = document.getElementById("empEmailId").value;
+            var password = document.getElementById("empPassword").value;
+            var confirmPassword = document.getElementById("empConfirmPassword").value;
+            var contact = document.getElementById("empContact").value;
+
+            var pattern1 = /^\s/;
+            var pattern2 = /^[A-Za-z A-Za-z]+$/;
+            var pattern3 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var pattern4 = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/;
+
+
+            if (pattern1.test(name) == true) {
+                document.getElementById("empNameError").innerText = "Space is not allowed at first place";
+                return false;
+            }
+            if (name == "") {
+                document.getElementById("empNameError").innerText = "Name can't be empty";
+                return false;
+            }
+            if (name.length < 2) {
+                document.getElementById("empNameError").innerText = "Name should be contain 2 character ";
+                return false;
+            }
+            if (pattern2.test(name) == false) {
+                document.getElementById("empNameError").innerText = " Name doesn't allow special charater or number";
+                return false;
+            }
+            if (pattern2.test(name) == true) {
+                document.getElementById("empNameError").innerText = "";
+            }
+
+
+            if (pattern3.test(email) == false) {
+                document.getElementById("empEmailError").innerText = " Enter a valid Email address";
+                return false;
+            }
+            if (pattern3.test(email) == true) {
+                document.getElementById("empEmailError").innerText = "";
+            }
+
+
+            if (pattern4.test(password) == false) {
+                document.getElementById("empPasswordError").innerText = " Enter a valid Password";
+                return false;
+            }
+            if (pattern4.test(password) == true) {
+                document.getElementById("empPasswordError").innerText = "";
+            }
+
+
+            if (password != confirmPassword) {
+                document.getElementById("empConfirmPasswordError").innerText = "Password does not match";
+                return false;
+            }
+            if (password == confirmPassword) {
+                document.getElementById("empConfirmPasswordError").innerText = "";
+            }
+
+
+            if (isNaN(contact) || contact.length < 8) {
+                document.getElementById("empContactError").innerText = "Contact number is not in proper format";
+                return false;
+            }
+
+            empCount++;
+            document.getElementById("empForm").innerHTML = " <br/> Hey " + name + "! You are registered now. <br/> Your Registration Id is : E20/" + empCount + ". <br/> "
+            document.getElementById("empIdVehicleForm").innerHTML = "E20/" + empCount
+            document.getElementById("vehicleForm").style.display = "block"
+            return true;
+        }
+
+        function VehicleForm() {
+            if (document.getElementById("vehicleType").value == "") {
+                document.getElementById("vehTypeError").innerText = "Please select a Vehicle type";
+                return false;
+            }
+            document.getElementById("empForm").style.display = "none"
+            document.getElementById("vehicleForm").style.display = "none"
+            document.getElementById("passForm").style.display = "block"
+        }
+
+        function Calculate() {
+            var type = document.getElementById("vehicleType").value;
+
+            if (type == "Cycle") {
+                var passtype = document.getElementById("passType").value;
+                if (passtype == "Daily") {
+                    document.getElementById("passAmount").value = "5"
+                } else if (passtype == "Weekly") {
+                    document.getElementById("passAmount").value = "100"
+                } else if (passtype == "Monthly") {
+                    document.getElementById("passAmount").value = "500"
+                }
+            } else if (type == "Two wheeler") {
+                var passtype = document.getElementById("passType").value;
+                if (passtype == "Daily") {
+                    document.getElementById("passAmount").value = "10"
+                } else if (passtype == "Weekly") {
+                    document.getElementById("passAmount").value = "200"
+                } else if (passtype == "Monthly") {
+                    document.getElementById("passAmount").value = "1000"
+                }
+            } else if (type == "Four wheeler") {
+                var passtype = document.getElementById("passType").value;
+                if (passtype == "Daily") {
+                    document.getElementById("passAmount").value = "20"
+                } else if (passtype == "Weekly") {
+                    document.getElementById("passAmount").value = "500"
+                } else if (passtype == "Monthly") {
+                    document.getElementById("passAmount").value = "3500"
+                }
+            }
+            return true;
+        }
+
+        function finalAmount() {
+            if (document.getElementById("passType").value == "") {
+                document.getElementById("passTypeError").innerText = "Please select a Pass type";
+                return false;
+            }
+            document.getElementById("empForm").style.display = "none"
+            document.getElementById("vehicleForm").style.display = "none"
+            document.getElementById("passForm").style.display = "none"
+            document.getElementById("conversionForm").style.display = "block"
+        }
+
+        function conversionCurrency() {
+
+            if (document.getElementById("conversionType").value == "") {
+                document.getElementById("conversionTypeError").innerText = "Please select a Currency type";
+                return false;
+            }
+
+            var passAmountRs = document.getElementById("passAmount").value;
+            var passAmountDollar = passAmountRs / 71.38;
+            var passAmountYen = (passAmountRs * 1.53);
+
+            if (document.getElementById("conversionType").value == "rupees") {
+                document.getElementById("payableAmount").value = passAmountRs;
+                return true;
+            } else if (document.getElementById("conversionType").value == "dollar") {
+                document.getElementById("payableAmount").value = passAmountDollar;
+                return true;
+            } else if (document.getElementById("conversionType").value == "yen") {
+                document.getElementById("payableAmount").value = passAmountYen;
+                return true;
+            }
+        }
+    </script>
+    <title>Metacube Parking System</title>
+</head>
+
+<body>
+    <form id="empForm" style="margin: 4%; border: 5px solid aqua;">
+
+        <h1>Metacube Parking System</h1>
+
+        <p id="empNameError" style="color:rgb(146, 110, 11);"></p>
+        <input id="empName" type="text" placeholder="Name" required>
+
+        <p id="empGenderError" style="color:rgb(146, 110, 11);"></p>
+        <br/><label><b>Gender :</b></label>
+        <label><input id="optionMail" style="width:20px;height:20px" type="radio" name="gender" required>Male</label>
+        <label><input id="optionFemale" style="width:20px;height:20px" type="radio" name="gender" required>Female</label>
+
+        <p id="empEmailError" style="color:rgb(146, 110, 11);"></p>
+        <br/><input id="empEmailId" type="text" placeholder="Email Id" required>
+
+        <p id="empPasswordError" style="color:rgb(146, 110, 11);"></p>
+        <br/><input id="empPassword" type="password" placeholder="Password" required>
+
+        <p id="empConfirmPasswordError" style="color:rgb(146, 110, 11);"></p>
+        <br/><input id="empConfirmPassword" type="password" placeholder="Confirm Password" required>
+
+        <p id="empContactError" style="color:rgb(146, 110, 11);"></p>
+        <br/><input id="empContact" type="text" placeholder="Contact Number" required>
+
+        <br/><input type="button" value="Register" onclick="return Registered()">
+
+    </form>
+
+    <form id="vehicleForm" style="margin : 4%; border : 5px solid aqua; display: none;">
+
+
+        <h2>Vehicle Information</h2>
+
+        <p id="vehNameError" style="color:rgb(146, 110, 11); "></p>
+        <input type="text" placeholder="Name "><br/>
+
+        <p id="vehTypeError" style="color:rgb(146, 110, 11); "></p>
+        <select id="vehicleType" required>
+            <option hidden value="">Vehicle</option>
+            <option value="Cycle">Cycle</option>
+            <option value="Two wheeler">Two Wheeler</option>
+            <option value="Four wheeler">Four Wheeler</option>
+        </select><br>
+
+        <input type="text" placeholder="Vehicle Number "><br/>
+
+        <br/><span>Employee ID ::  </span>
+        <span id="empIdVehicleForm"></span><br/>
+
+        <textarea placeholder="Identification"></textarea><br/>
+
+        <input type="button" value="Submit" onclick="return VehicleForm()">
+    </form>
+
+    <form id="passForm" style="margin: 4%; border: 5px aqua;">
+
+        <h2>Pass type</h2>
+        <p id="passTypeError" style="color:rgb(146, 110, 11); "></p>
+        <select id="passType" onchange="return Calculate()">
+            <option hidden value="">Pass Type</option>
+            <option value="Daily">Daily</option>
+            <option value="Weekly">Weekly</option>
+            <option value="Monthly">Monthly</option>
+        </select><br/>
+
+        <span>Amount (INR) > </span>
+        <input id="passAmount" type="text" disabled>
+
+        <br/><input type="button" value="Get Pass" onclick="return finalAmount()">
+    </form>
+
+    <form id="conversionForm" style="margin: 4%; border: 5px solid aqua;">
+
+        <h2>Currency</h2>
+        <p id="conversionTypeError" style="color:rgb(146, 110, 11); "></p>
+        <select id="conversionType" onchange="return conversionCurrency()">
+            <option hidden value="">Currency</option>
+            <option value="rupees">INR</option>
+            <option value="dollar">Dollar</option>
+            <option value="yen">Yen</option>
+        </select><br/>
+
+        <span>Amount > </span>
+        <input id="payableAmount" type="text" disabled>
+
+        <br/><input type="submit" value="Pay">
+    </form>
+
+</body>
+
+</html>
