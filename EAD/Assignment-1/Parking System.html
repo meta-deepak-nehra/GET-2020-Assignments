@@ -219,6 +219,14 @@
                 return true;
             }
         }
+
+        function exitPage() {
+            document.getElementById("empForm").style.display = "none"
+            document.getElementById("vehicleForm").style.display = "none"
+            document.getElementById("passForm").style.display = "none"
+            document.getElementById("conversionForm").style.display = "none"
+            document.getElementById("exitP").style.display = "block"
+        }
     </script>
     <title>Metacube Parking System</title>
 </head>
@@ -278,7 +286,7 @@
         <input type="button" value="Submit" onclick="return VehicleForm()">
     </form>
 
-    <form id="passForm" style="margin: 4%; border: 5px aqua;">
+    <form id="passForm" style="margin: 4%; border: 5px solid aqua;">
 
         <h2>Pass type</h2>
         <p id="passTypeError" style="color:rgb(146, 110, 11); "></p>
@@ -309,7 +317,11 @@
         <span>Amount > </span>
         <input id="payableAmount" type="text" disabled>
 
-        <br/><input type="submit" value="Pay">
+        <br/><input type="button" value="Pay" onclick="return exitPage()">
+    </form>
+
+    <form id="exitP" style="margin: 4%;border: 5px solid aqua;display: none;">
+        <h2>You are registered. <br/>Thanks.</h2>
     </form>
 
 </body>
