@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Insert title here</title>
+<style>
+form {
+        text-align: center;
+}
+
+input {
+        height: 30px;
+        width: 350px;
+        margin: 10px;
+}
+
+input[type="submit"] {
+        width: 150px;
+        height: 30px;
+        margin: 20px;
+}
+</style>
+</head>
+
+<body>
+        <form id="searchStudent" style="margin: 4%; border: 5px solid aqua;" action="SearchStudentServlet" method="get" >
+                <h2>Search Student</h2>
+                <br />
+                <input id="stuFName" type="text" placeholder="First Name" name="firstName"><br>
+                <br />
+                <input id="stuLName" type="text" placeholder="Last Name" name="lastName"><br>
+                <br />
+                <input id="stuClass" type="number" placeholder="Class" name="sClass"><br>
+                <br />
+                <input type="submit" value="Search"><br>
+                <br>
+        </form>
+</body>
+
+</html>
