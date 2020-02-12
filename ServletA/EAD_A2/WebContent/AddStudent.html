@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Insert title here</title>
+<style>
+form {
+        text-align: center;
+}
+
+input {
+        height: 30px;
+        width: 350px;
+        margin: 10px;
+}
+
+input[type="submit"] {
+        width: 150px;
+        height: 30px;
+        margin: 20px;
+}
+</style>
+</head>
+
+<body>
+        <form id="homePage" style="margin: 4%; border: 5px solid aqua;"
+                method="post" action="AddStudentServlet">
+                <h2>Add Student Details</h2>
+                <br />
+                <input id="studentFirstName" type="text" placeholder="First Name"
+                        name="firstName" required><br> <br />
+                <input id="studentLastName" type="text" placeholder="Last Name"
+                        name="lastName"><br> <br />
+                <input id="studentFatherName" type="text" placeholder="Father's Name"
+                        name="fatherName" required><br> <br />
+                <input id="studentEmail" type="text" placeholder="E Mail" name="email"
+                        required><br> <br />
+                <input id="studentClass" type="number" placeholder="Student Class"
+                        name="class" min="1" max="12"required><br> <br />
+                <input id="studentAge" type="number" placeholder="Student Age"
+                        name="age" min="1" max="100" required><br> <br />
+                <input type="submit" value="Submit"><br>
+                <br>
+        </form>
+</body>
+
+</html>

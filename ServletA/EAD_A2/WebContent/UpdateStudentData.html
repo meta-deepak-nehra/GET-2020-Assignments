@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script>
+        function setData() {
+
+                console.log("from setdata update form")
+                let url = new URL(window.location);
+                var studentID = url.searchParams.get("Id");
+                var studentFirstName = url.searchParams.get("firstName");
+                var studentLastName = url.searchParams.get("lastName");
+                var studentFatherName = url.searchParams.get("fatherName");
+                var studentEmail = url.searchParams.get("email");
+                var studentClass = url.searchParams.get("studentClass");
+                var studentAge = url.searchParams.get("age");
+
+                document.getElementById("studentID").value = studentID;
+                document.getElementById("studentFirstName").value = studentFirstName;
+                document.getElementById("studentLastName").value = studentLastName;
+                document.getElementById("studentFatherName").value = studentFatherName;
+                document.getElementById("studentEmail").value = studentEmail;
+                document.getElementById("studentClass").value = studentClass;
+                document.getElementById("studentAge").value = studentAge;
+        }
+</script>
+<style>
+form {
+        text-align: center;
+}
+
+input {
+        height: 30px;
+        width: 350px;
+        margin: 10px;
+}
+
+input[type="submit"] {
+        width: 150px;
+        height: 30px;
+        margin: 20px;
+}
+</style>
+<title>Insert title here</title>
+</head>
+<body onload="setData()">
+        <form id="updateStudentData" style="margin: 4%; border: 5px solid aqua;" method="get" action="UpdateStudentDataServlet">
+                <h2>Update Student Details</h2><br/>
+                <input id="studentID" type="text" placeholder="Student ID" name="ID" readonly><br><br/>
+                <input id="studentFirstName"type="text" placeholder="First Name" name="firstName" required><br><br/>
+                <input id="studentLastName" type="text" placeholder="Last Name" name="lastName"><br><br/>
+                <input id="studentFatherName" type="text" placeholder="Father's Name" name="fatherName" required><br><br/>
+                <input id="studentEmail" type="text" placeholder="E Mail" name="email" required><br><br/>
+                <input id="studentClass" type="number" placeholder="Student Class" name="class" required><br><br/>
+                <input id="studentAge" type="number" placeholder="Student Age" name="age" required><br><br/>
+                <input type="submit" value="Update"><br><br>
+        </form>
+</body>
+</html>
