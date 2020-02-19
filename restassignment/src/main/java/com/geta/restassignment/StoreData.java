@@ -87,11 +87,8 @@ public class StoreData {
 	public void updateFullTable(Store s) throws SQLException 
 	{
 		String sql = "truncate table fruitstore";
-//		System.out.println("eeeefefdetdyfugjkhidf");
 		PreparedStatement st = con.prepareStatement(sql);
-//		System.out.println("eee876578");
 		st.execute();
-//		System.out.println("eeeefefdedf");
 
 		String sql1 = "insert into fruitstore values(?,?)";
 
@@ -104,22 +101,13 @@ public class StoreData {
 
 	public void update(Store s) 
 	{
-//		int qq=s.getQuantity();
-//		String nn=s.getName();
 		String sql = "update fruitstore set fQuantity=? where fName=?";
-//		System.out.println("eeeefefdetdyfugjkhidf");
-//		System.out.println(sql1);
 		try 
 		{
 			PreparedStatement st = con.prepareStatement(sql);
-			System.out.println("eee876578");
 			st.setInt(1, s.getQuantity());
 			st.setString(2, s.getName());
-			System.out.println("12345678");
 			st.executeUpdate();
-//			System.out.println(i);
-			System.out.println("eeeefefdedf");
-//			st1.executeUpdate(sql1);
 		} 
 		catch (SQLException e) 
 		{
@@ -146,28 +134,3 @@ public class StoreData {
 
 
 
-/*
-public void update(Store s) 
-{
-	int qq=s.getQuantity();
-	String nn=s.getName();
-	String sql1 = "update fruitstore set fQuantity="+qq+" where fName='"+nn+"'";
-//	System.out.println("eeeefefdetdyfugjkhidf");
-//	System.out.println(sql1);
-	try 
-	{
-		Statement st1 = con.createStatement();
-//		System.out.println("eee876578");
-////		st1.setInt(1, s.getQuantity());
-////		st1.setString(2, s.getName());
-//		System.out.println("12345678");
-////		int i=st1.executeUpdate();
-////		System.out.println(i);
-//		System.out.println("eeeefefdedf");
-		st1.executeUpdate(sql1);
-	} 
-	catch (SQLException e) 
-	{
-		e.printStackTrace();
-	}
-}*/

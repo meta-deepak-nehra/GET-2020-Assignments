@@ -19,7 +19,7 @@ public class StoreResource
 	StoreData data= new StoreData();
 	
 	@GET
-	@Path("store")
+	@Path("inventory")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Store> getItems()
 	{	
@@ -27,7 +27,7 @@ public class StoreResource
 	}
 	
 	@GET
-	@Path("store/{name}")
+	@Path("inventory/{name}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Store getItem(@PathParam("name")String name)
 	{
@@ -35,7 +35,7 @@ public class StoreResource
 	}
 	
 	@POST
-	@Path("store")
+	@Path("inventory")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Store createItem(Store s)
 	{
@@ -44,7 +44,7 @@ public class StoreResource
 	}
 	
 	@PUT
-	@Path("store")
+	@Path("inventory")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Store updateItem(Store s)throws SQLException
 	{
@@ -53,14 +53,11 @@ public class StoreResource
 	}
 	
 	@PUT
-	@Path("store/{name}")
+	@Path("inventory/{name}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Store updateItems(Store s)
 	{
-//		Store s=data.getItem(s1);
-//		System.out.println(s1.getName());
-//		System.out.println(s1.getQuantity());
 		if(data.getItem(s.getName()).getName()==null)
 		{
 			data.create(s);
@@ -73,7 +70,7 @@ public class StoreResource
 	}
 	
 	@DELETE
-	@Path("store/{name}")
+	@Path("inventory/{name}")
 	public Store deleteItem(@PathParam("name")String name) 
 	{
 		Store s=data.getItem(name);
