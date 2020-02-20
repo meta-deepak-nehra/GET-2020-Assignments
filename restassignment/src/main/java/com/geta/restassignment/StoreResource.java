@@ -78,4 +78,11 @@ public class StoreResource
 			data.delete(name);
 		return s;
 	}
+
+	@DELETE
+	@Path("inventory")
+	public  void deleteTable()
+	{
+		data.deleteTableData();
+	}
 }

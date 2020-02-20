@@ -130,6 +130,20 @@ public class StoreData {
 			e.printStackTrace();
 		}
 	}
+
+	public void deleteTableData()
+	{
+		String sql = "truncate table fruitstore";
+		try 
+		{
+			PreparedStatement st = con.prepareStatement(sql);
+			st.execute();
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+	}
 }
 
 
