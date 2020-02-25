@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script src="validation.js" type="text/javascript">
+	
+</script>
+<style type="text/css">
+#validationMessage {
+	outline: none;
+	border: none;
+	resize: none;
+	padding-top: 25px;
+	margin-left: 32px;
+	color: rgb(168, 3, 3);
+}
+</style>
+<title>
+ Metacube Parking
+	</title>
+</head>
+<body>
+<h1>
+        Metacube Parking System
+    </h1>
+    
+    <h1 align="justify">
+    	<a href="Login.html">Login</a>
+    </h1>
+
+    <fieldset>
+        <legend name="formTitle"> Employee Registration Form </legend>
+        <form name="empRegistrationForm" method="post" action="RegisterEmployee">
+        
+            <textarea rows="4" cols="50" id="validationMessage" readonly="readonly"></textarea> <br>
+
+            <input id="empName" name="empName" type="text" required placeholder="Name" onblur="return validateFirstName()">
+
+            <br> <br>
+
+            <select name="gender">
+            	<option value="Male">Male</option>
+            	<option value="Female"> Female </option>
+            </select>
+            <br>
+            <br>
+
+            <input type="email" id="emailid" name="emailid" required placeholder="Email name" onblur="return validateEmail()"> <br> <br>
+
+            <input type="password" id="empPassword" name="empPassword" required placeholder="Password" onblur="return validatePassword()"> <br> <br>
+            <input type="password" id="empConfirmPassword" name="empConfirmPassword" required placeholder="Confirm Password" onblur="return checkPassword()"> <br> <br>
+
+            <input type="text" name="empPhoneNumber" required placeholder="Phone number" onblur="return validatePhoneNumber()"> <br> <br>
+            
+            <select name="organization" id="organization">
+            <option disabled selected hidden >Organization</option>
+            <option>Metacube</option>
+            <option>Thrillophilia</option>
+            <option> ATCS </option>
+            <option>Infosys</option>
+            <option>Mahindra </option>
+            </select>
+            <input type="submit" value="submit">
+            <br>
+            <br>
+
+        </form>
+    </fieldset>
+</body>
+</html>
