@@ -1,0 +1,117 @@
+/* this set's the background color for whole body */
+
+
+/* setting the margin to 0  */
+
+body {
+    background-color: #f9fcfa;
+    margin: 0px;
+}
+
+
+/* this sets the background color of navigation bar  */
+
+.NavBar {
+    background-color: black;
+    padding: 20px;
+}
+
+
+/* this set's the color and measurements of refrences in action  */
+
+.NavBar a {
+    color: whitesmoke;
+    text-align: center;
+    margin: 100px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+/* setting the dimension of image  */
+
+.imageOfParking {
+    width: 100%;
+    height: 600px;
+}
+
+
+/* setting the font of hedding h1  */
+
+h1 {
+    font-style: italic;
+}
+
+
+/* setting the dimension of every form  */
+
+.form {
+    text-align: center;
+    border-width: 15px;
+    padding: 20px;
+    margin-left: 350px;
+    margin-right: 350px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: rgb(212, 209, 209);
+}
+
+
+/*setting the dimensions and figure of text,email,password,select and textarea 
+ type of inputs to get symmetry in the programme  */
+
+.form input[type=text],
+input[type=email],
+input[type=password],
+select,
+textarea {
+    margin: 10px;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    border-bottom: 2px solid blue;
+    padding: 20px;
+    width: 350px;
+    resize: none;
+}
+
+
+/* setting the dimensions and color of submit and button type inputs  */
+
+input[type=submit],
+input[type=button] {
+    margin: 15px;
+    outline: none;
+    border: none;
+    border-radius: 23px;
+    padding: 20px;
+    width: 300px;
+    background-color: rgb(0, 183, 255);
+}
+
+
+/* setting the dimensions of table contents  */
+
+table,
+tr,
+td {
+    text-align: center;
+    margin-left: 110px;
+    padding: 12px;
+}
+
+summary::-webkit-details-marker {
+    margin-left: 20px;
+}
+
+
+/* setting the properties of summary block */
+
+article>details>summary {
+    font-size: 26px;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    padding: 10px;
+    background-color: rgb(245, 208, 166);
+    outline-color: black;
+}
