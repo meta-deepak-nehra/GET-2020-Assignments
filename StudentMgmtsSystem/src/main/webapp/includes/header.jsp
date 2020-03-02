@@ -15,7 +15,7 @@
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	crossorigin="anonymous">
 
-<title>Hello, world!</title>
+<title>Student Management System</title>
 <style>
 	form {
 		width: 500px;
@@ -29,7 +29,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="/">Student Mgmt System</a>
+		<a class="navbar-brand" href="/">Student Management System</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarText" aria-controls="navbarText"
 			aria-expanded="false" aria-label="Toggle navigation">
