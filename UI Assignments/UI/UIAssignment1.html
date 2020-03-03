@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parking System</title>
+
+    <link rel="StyleSheet" href="Style.css">
+
+</head>
+
+<body>
+
+    <!-- Division for Navigation bar -->
+    <div class=NavBar>
+        <!-- Here All the four link are provided for different forms -->
+        <a href="#employeeToggle">Add Employee</a>
+        <a href="#vehicleToggle">Add Vehicle  </a>
+        <a href="#feedbackToggle">Give Feedback  </a>
+        <a href="#passOfVehicleToggle">Passes  </a>
+    </div>
+
+    <!-- Division for Image related solution -->
+    <div>
+        <!-- Image refrence is provided here -->
+        <img class="imageOfParking" src="parkingimg.jpg" alt="Can't Open Image">
+    </div>
+
+    <!-- it specifies a different form  -->
+    <article>
+        <!-- to hide or view the form  -->
+        <details>
+            <!-- it specifies the heading of the form  -->
+            <summary id="employeeToggle">Employyee registeration form</summary>
+            <!-- Division for Employee Registeration form -->
+            <div class="formDivision">
+
+                <!-- Form for Employee Registeration Form -->
+                <!-- Here after submiting this form it will redirect to the page again -->
+                <form action=UIAssignment1.html id="employeeForm" class="form">
+                    <h1>Employee Registeration Form</h1>
+
+                    <!-- inputs for Name ,Gender, Email , Password , Confirm Password , Contact Number -->
+                    <input id="empName" type="text" placeholder="Name" required></br>
+                    <label>Gender :</label>
+                    <label><input id="optionMale"  type="radio" name="gender"  required>Male</label>
+                    <label><input id="optionFemale"  type="radio" name="gender" required>Female</label></br>
+                    <input id="empEmailId" type="email" placeholder="Email Id" required></br>
+                    <input id="empPassword" type="password" placeholder="Password" required><br/>
+                    <input id="empConfirmPassword" type="password" placeholder="Confirm Password" required></br>
+                    <input id="empContact" type="text" placeholder="Contact Number" required></br>
+                    <input type="submit" value="Register">
+
+                </form>
+
+            </div>
+        </details>
+    </article>
+
+    <article>
+        <details>
+            <summary id="vehicleToggle">Vehicle registeration form</summary>
+            <!-- Division for Vehicle Registeration form -->
+            <div id="vehicleForm" class="formDivision">
+                <!-- Form for vehicle Registeration Form -->
+                <form id="vehicleFormid" action=UIAssignment1.html class="form">
+                    <h1>Vehicle Registeration Form</h1>
+
+                    <input id="vehicleCompany" type="text" placeholder="Vehicle Make(Company)" required></br>
+                    <input id="vehicleModel" type="text" placeholder="Vehicle Model" required></br>
+                    <select id="vehicleType" required>
+                <option hidden value="">Vehicle</option> 
+                <option value="Cycle" selected="selected">Cycle</option>
+                <option value="motorCycle">Motor Cycle</option>
+                <option value="car">Car</option>
+            </select><br>
+
+                    </table>
+                    <input id="vehicleNumber" type="text" placeholder="Vehicle Number" required></br>
+                    <input type="text" id="empID" placeholder="Employee ID" required></br>
+                    <textarea placeholder="Identification (Textarea - Color, mark,visible accessory etc.)" rows="3" cols="30" required></textarea></br>
+                    <input type="submit" value="Submit">
+                </form>
+
+            </div>
+    </article>
+    </details>
+
+    <article>
+        <details>
+            <summary id="feedbackToggle">Feedback Form</summary>
+            <!-- Division for Feedback form -->
+            <div id="feedback" class="Feedback">
+
+                <form action="UIAssignment1.html" class="form">
+                    <h1>Feedback Form</h1>
+                    <input type="text" placeholder="Name" required></br>
+                    <input type="email" placeholder="Email" required></br>
+                    <input type="text" placeholder="Subject" required></br>
+                    <textarea placeholder="Message" rows="3" cols="30" required></textarea></br>
+                    <input type="submit" value="Send">
+
+                </form>
+
+            </div>
+    </article>
+    </details>
+
+    <article>
+        <details>
+            <summary id="passOfVehicleToggle">Passes</summary>
+            <!-- Division for Passes form -->
+            <div id="passOfVehicle" class="PassOfVehicle">
+
+                <form action="UIAssignment1.html" class="form">
+                    <!-- Table for vehicles and duration of the Passes with their passes -->
+                    <table>
+                        <tr>
+                            <th>Vehicle</th>
+                            <th>Daily</th>
+                            <th>Monthly</th>
+                            <th>Yearly</th>
+                        </tr>
+                        <tr>
+                            <td>Cycle</td>
+                            <td><input type="radio" name="pass" value="5">5</td>
+                            <td><input type="radio" name="pass" value="100">100</td>
+                            <td><input type="radio" name="pass" value="500">500</td>
+                        </tr>
+                        <tr>
+                            <td>Motor Cycle</td>
+                            <td><input type="radio" name="pass" value="100">10</td>
+                            <td><input type="radio" name="pass" value="200">200</td>
+                            <td><input type="radio" name="pass" value="1000">1000</td>
+                        </tr>
+                        <tr>
+                            <td>Car</td>
+                            <td><input type="radio" name="pass" value="20">20</td>
+                            <td><input type="radio" name="pass" value="500">500</td>
+                            <td><input type="radio" name="pass" value="3500">3500</td>
+                        </tr>
+
+                    </table>
+                    <input type="submit" value="Buy">
+
+
+                </form>
+
+
+            </div>
+    </article>
+    </details>
+
+
+</body>
+
+</html>
