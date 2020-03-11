@@ -1,0 +1,131 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#VehicleName, #VehicleCurrency, #Organization {
+	background: transparent;
+	border: 1px solid rgba(19, 48, 48, 0.575);
+}
+
+#receipt {
+	display: none;
+}
+
+#pass {
+	padding-bottom: 30px;
+	display: none;
+}
+
+#VehicleForm {
+	display: none;
+}
+
+#submitVehical, #submitRegistration , #submitLogin{
+	margin-bottom: 0;
+	margin-left: calc(50% - 90px);
+	margin-top: 50px;
+	border-radius: 25px;
+	width: 150px;
+	height: 50px;
+}
+
+.empFormHeading {
+	text-align: center;
+}
+
+.passPrice {
+	width: 70px;
+	text-align: center;
+}
+
+.empForm {
+	margin: 80px auto;
+	padding: 20px;
+	padding-bottom: 0px;
+	width: 800px;
+	height: auto;
+	border-radius: 25px;
+	background: rgba(175, 238, 238, 0.575);
+	box-shadow: 5px 25px 25px rgba(175, 238, 238, 0.575);
+}
+
+.input:focus, .submit:focus, select:focus, #submitVehical:focus,
+	#submitRegistration:focus {
+	outline: none;
+}
+
+.input {
+	margin-left: 20px;
+	margin-right: 20px;
+	width: 300px;
+	height: 20px;
+	border: none;
+	background: transparent;
+}
+
+.gender {
+	margin-left: 40px;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-bottom: 8px;
+	font-size: 20px;
+}
+
+
+body {
+	margin: 0;
+	padding: 0;
+	background: url(po.jpg);
+	background-size: cover;
+}
+
+fieldset {
+	margin: 5px;
+	padding: 5px;
+	border-radius: 25px;
+	text-align: justify;
+	width: 300px;
+	display: inline-block;
+	border: 1px solid rgba(19, 48, 48, 0.575);
+}
+
+legend {
+	margin-left: 20px;
+	font-size: 18px;
+}
+
+
+
+form {
+	padding-top: 25px;
+	padding-left: 25px;
+	padding-bottom: 0px;
+	height: auto;
+}
+
+select {
+	margin-top: 20px;
+	margin-left: 10px;
+	border-radius: 25px;
+	padding-left: 20px;
+	width: 350px;
+	height: 43px;
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 15px;
+}
+
+th {
+	text-align: center;
+}
+
+table {
+	margin: auto;
+}
