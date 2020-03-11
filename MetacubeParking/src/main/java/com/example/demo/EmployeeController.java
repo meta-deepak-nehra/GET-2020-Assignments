@@ -43,7 +43,6 @@ public class EmployeeController extends ValidateSession{
 		Vehicle vehicle = new Vehicle();
 		vehicle.setEmpId((int)session.getAttribute("empId"));
 		model.addAttribute("vehicle",vehicle);
-		System.out.println("vehicle");
 		return "vehicleRegistration";
 	}
 	
@@ -63,11 +62,9 @@ public class EmployeeController extends ValidateSession{
 		String heading = null;
 		
 		if(errors.hasErrors()) {
-			System.out.println("errors");
 			return "vehicleRegistration";
 		}else {
 			employeeService.addVehicle(vehicle);
-			System.out.println("employee valid");
 			
 			if("Cycle".equals(vehicle.getVehicleType())){
 	            heading = "Cycle Pass";
@@ -119,7 +116,6 @@ public class EmployeeController extends ValidateSession{
 		model.addAttribute("Monthly",session.getAttribute("Momthly"));
 		model.addAttribute("Daily",session.getAttribute("Daily"));
 		model.addAttribute("Yearly",session.getAttribute("Yearly"));
-		System.out.println("getPass");
 		return "getPass";
 	}
 	
@@ -136,7 +132,6 @@ public class EmployeeController extends ValidateSession{
 	@PostMapping("/getPass")
 	public String getPass(@Valid @ModelAttribute("getPassModel") GetPassModel getPassModel, Errors errors ,HttpSession session, Model model, BindingResult bindingResult) throws SQLException {
 		if(errors.hasErrors()) {
-			System.out.println("getpass errors");
 			return "getPass";
 		}
 		
@@ -154,7 +149,6 @@ public class EmployeeController extends ValidateSession{
 	@GetMapping("/changePassword")
 	public String signup(Model model) {
 		model.addAttribute("changePasswordModel",new ChangePasswordModel());
-		System.out.println("changePasswordModel");
 		return "changePassword";
 	}
 	
@@ -172,12 +166,10 @@ public class EmployeeController extends ValidateSession{
 	@PostMapping("/changePassword")
 	public String signup(@Valid @ModelAttribute("changePasswordModel") ChangePasswordModel changePasswordModel, Errors errors, BindingResult bindingResult, Model model, HttpSession session) throws SQLException, IOException {
 		if(errors.hasErrors()) {
-			System.out.println("errors");
 			return "changePassword";
 		}
 		if(changePasswordModel.getNewPassword().equals(changePasswordModel.getConfirmPassword())) {
 			if(employeeService.changePassword((int)session.getAttribute("empId"), changePasswordModel.getNewPassword(), changePasswordModel.getOldPassword())) {
-				System.out.println("password valid");
 				return "redirect:/home";
 			}
 		}
@@ -195,7 +187,6 @@ public class EmployeeController extends ValidateSession{
 	@GetMapping("/update")
 	public String update(Model model, HttpSession session) throws IOException, SQLException {
 		model.addAttribute("employee",session.getAttribute("employeeInformation"));
-		System.out.println("employeeUpdate");
 		return "update";
 	}
 	
@@ -212,11 +203,9 @@ public class EmployeeController extends ValidateSession{
 	@PostMapping("/update")
 	public String update(@Valid @ModelAttribute("employee") UpdateModel updateModel, Errors errors, BindingResult bindingResult, Model model) throws SQLException, IOException {
 		if(errors.hasErrors()) {
-			System.out.println("errors");
 			return "update";
 		}
 		if(employeeService.updateEmployee(updateModel)) {
-			System.out.println("employee update");
 			return "redirect:/home";
 		}
 		else
@@ -232,7 +221,6 @@ public class EmployeeController extends ValidateSession{
 	@GetMapping("/logout")
 	public String logout(Model model, HttpSession session) {
 		session.removeAttribute("empId");
-		System.out.println("employeelogout");
 		return "redirect:/home";
 	}
 	
@@ -243,7 +231,6 @@ public class EmployeeController extends ValidateSession{
 	 */
 	@GetMapping("/upload")
 	public String logout(Model model) {
-		System.out.println("img");
 		return "ImageUpload";
 	}
 	
@@ -259,26 +246,20 @@ public class EmployeeController extends ValidateSession{
 	@PostMapping("/upload")
 	public String upload(Model model, @RequestParam("file") MultipartFile img, HttpSession session) throws IOException, SQLException {
 		Path fileNameAndPath = Paths.get(uploadDirectory,img.getOriginalFilename());
-		System.out.println(fileNameAndPath);
 		Files.write(fileNameAndPath, img.getBytes());
-		System.out.println(fileNameAndPath);
 		model.addAttribute("msg","ssss");
-		System.out.println(fileNameAndPath);
 		employeeService.setEmployeeImage((int) session.getAttribute("empId"), img.getOriginalFilename());
 		return "redirect:/home";
 	}
 //	@GetMapping("/upload")
 //	public String logout(Model model) {
-//		System.out.println("img");
 //		return "ImageUpload";
 //	}
 //	
 //	@PostMapping("/upload")
 //	public String upload(Model model, @RequestParam("file") MultipartFile img, HttpSession session) throws IOException, SQLException {
 //		Path fileNameAndPath = Paths.get(uploadDirectory,img.getOriginalFilename());
-//		System.out.println(fileNameAndPath);
 //		Files.write(fileNameAndPath, img.getBytes());
-//		System.out.println(fileNameAndPath);
 //		employeeService.setEmployeeImage((int) session.getAttribute("empId"), img.getBytes());
 //		return "redirect:/home";
 //	}

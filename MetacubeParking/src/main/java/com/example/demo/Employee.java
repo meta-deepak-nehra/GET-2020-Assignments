@@ -82,22 +82,6 @@ public class Employee {
 	public void setConfirmPassword(String confirmPassword) {
 		ConfirmPassword = confirmPassword;
 	}
-
-//	public String getOldPassword() {
-//		return OldPassword;
-//	}
-//
-//	public void setOldPassword(String oldPassword) {
-//		OldPassword = oldPassword;
-//	}
-//	
-//	public String getNewPassword() {
-//		return NewPassword;
-//	}
-//
-//	public void setNewPassword(String newPassword) {
-//		NewPassword = newPassword;
-//	}
 	
 	public String getGender() {
 		return gender;

@@ -31,7 +31,6 @@ public class EmployeeDAO {
      */
     public void connection(){
         try {
-        	System.out.println("connection11");
             Class.forName(JDBC_DRIVER);
             con = (Connection) DriverManager.getConnection(DB_URL, DB_user,
                     DB_PASS);
@@ -59,7 +58,6 @@ public class EmployeeDAO {
 	        ps.setString(6, employee.getOrganization());
 	        ps.executeUpdate();
 	        connection();
-        	System.out.println("aa gya h");
         	stm = (Statement) con.createStatement();
         	rs = stm.executeQuery("select empId from Employee where emailId ='"+employee.getEmailID()+"'");
         	rs.next();
@@ -247,7 +245,6 @@ public class EmployeeDAO {
 		String checkQuery = "select emailId from Employee where empId != "+updateModel.getEmpId()+" && "
 				+ "emailId = '"+updateModel.getEmailID()+"'";
 		rs = stm.executeQuery(checkQuery);
-		System.out.println(checkQuery);
 		if(rs.next()){
             return false;
         }
@@ -256,7 +253,6 @@ public class EmployeeDAO {
                             + "emailId = '"+updateModel.getEmailID()+"', "
                                     + "number = '"+updateModel.getNumber()+"' , "
                                             + "organization = '"+updateModel.getOrganization()+"' where empId = "+updateModel.getEmpId();
-            System.out.println(Query);
             stm.execute(Query);
             return true;
             
@@ -312,45 +308,6 @@ public class EmployeeDAO {
 		return imageName;
 	}
 
-//	public void setEmployeeImage(int empId, byte[] bytes) throws SQLException {
-//		connection();
-//		stm = null;
-//				
-//		stm = (Statement) con.createStatement();
-//			PreparedStatement insert = con
-//                .prepareStatement("insert into EmployeeImage values(?, ?)");
-//	        insert.setLong(1, empId);
-//	        insert.setBytes(2, bytes);
-//	        insert.executeUpdate();
-//		
-//
-//	}
-	
-//	public byte[] getEmployeeImage(int empId ) throws SQLException, IOException {
-//		connection();
-//		stm = null;
-//		Blob image = null;
-//		byte imageName[] = null;
-//				
-//		stm = (Statement) con.createStatement();
-//		String strQuery = "SELECT image FROM EmployeeImage where empId="+empId;
-//		rs = stm.executeQuery(strQuery);
-//		if(rs.next()) {
-//			image = (Blob) rs.getBlob(1);
-//			imageName = image.getBytes(1,(int)image.length());
-//		}
-//		response.setContentType("image/jpg");
-//		OutputStream o = response.getOutputStream();
-//		o.write(imageName);
-//		o.flush();
-//		o.close();
-//		while(rs.next()) {
-//			System.out.println(rs.getBytes("image")+" grv");
-//			System.out.println(rs.getBytes("image")+" grrrv");
-//		   	imageName = rs.getBytes("image");
-//		}
-//		return imageName;
-//	}
 
 }
 

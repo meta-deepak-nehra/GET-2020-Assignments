@@ -134,11 +134,5 @@ public class EmployeeService {
 		return employeDAO.getEmployeeImage(empId);
 	}
 
-//	public void setEmployeeImage(int empId, byte[] bytes) throws SQLException {
-//		employeDAO.setEmployeeImage(empId, bytes);
-//	}
-//	public String getEmployeeImage(int empId) throws SQLException {
-//		return employeDAO.getEmployeeImage(empId);
-//	}
 
 }
