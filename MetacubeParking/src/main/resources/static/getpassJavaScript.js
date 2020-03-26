@@ -1,0 +1,16 @@
+alert("----------------");
+let url = new URL(window.location);
+let heading = url.searchParams.get("heading");
+let daily = url.searchParams.get("daily");
+let monthly = url.searchParams.get("monthly");
+let yearly = url.searchParams.get("yearly");
+alert(heading);
+alert(yearly);
+document.getElementById("heading").innerHTML = heading;
+console.log(document.getElementById("heading").innerHtml);
+document.getElementById("r1").value = daily;
+document.getElementById("price1").placeholder = daily;
+document.getElementById("r2").value = monthly;
+document.getElementById("price2").placeholder = monthly;
+document.getElementById("r3").value = yearly;
+document.getElementById("price3").placeholder = yearly;
