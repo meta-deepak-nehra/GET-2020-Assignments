@@ -1,0 +1,15 @@
+spring:
+  mvc:
+   view:
+    prefix: /pages/
+    suffix: .jsp
+  datasource: 
+   url: jdbc:mysql://localhost:3306/hibernatedb
+   username: root
+   password: root 
+   driver: com.mysql.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show_sql: true
