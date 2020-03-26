@@ -1,0 +1,266 @@
+/* Setting the background image of body */
+
+body {
+    background-image: url("images/bodybg.png");
+    margin: 0;
+}
+
+
+/* Setting the image for header section */
+
+#header {
+    background-image: url("images/homebg.png");
+    height: 149%;
+}
+
+
+/* Setting the configuration for navigation class */
+
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+/* Setting the configuration for anchor tag of navigation class */
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+
+/* Setting padding for Logo Title in logo class */
+
+.logo {
+    padding: 20;
+}
+
+
+/* Setting configuration for section cover */
+
+#cover {
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    padding: 70 200;
+}
+
+
+/* Setting  configuration for h1 tag of cover section */
+
+#cover h1 {
+    color: white;
+    font-size: 80px;
+}
+
+
+/* Styling button class */
+
+.button {
+    color: rgb(250, 245, 245);
+    padding: 15 30;
+    text-decoration: none;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+
+/* Styling red button */
+
+.red {
+    background: #FC6A42;
+}
+
+
+/* Styling blue button */
+
+.blue {
+    background: #4466C9;
+}
+
+
+/* Stying the content class */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+
+
+/* Styling the h1 tag of content class */
+
+.content h1 {
+    color: #648CFF;
+    text-align: center;
+}
+
+
+/* Styling content-sub-heading class */
+
+.content-sub-heading {
+    color: #83878D;
+    font-size: 18px;
+    text-align: center;
+    margin: inherit;
+}
+
+
+/* Styling the divisions of features */
+
+#features>div {
+    display: flex;
+    justify-content: space-around;
+    padding: 50 0;
+}
+
+
+/* Styling the feature-container class */
+
+.feature-container {
+    margin-right: 20px;
+    display: flex;
+}
+
+
+/* Styling the img tag of feature-container class */
+
+.feature-container img {
+    width: 80px;
+    padding-right: 15;
+}
+
+
+/* Styling the image after the features present in last division of features */
+
+#features div:last-child>img {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Styling the class screenshots-container */
+
+.screenshots-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 100 0;
+}
+
+
+/* Designing h2 tag of screenshots-container class */
+
+.screenshots-container h2 {
+    font-size: 40px;
+}
+
+
+/* Designing h2 tag of screenshots-container class */
+
+.screenshots-container p {
+    color: #83878D;
+    font-size: 25px;
+    width: 483px;
+}
+
+
+/* Setting padding of section reviews  */
+
+#reviews {
+    padding: 70px 0PX;
+}
+
+
+/* Styling the class review-container */
+
+.review-container {
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    font-style: oblique;
+}
+
+
+/* Styling the p tag of class review-container */
+
+.review-container p {
+    padding: 10px;
+    width: 562px;
+}
+
+
+/* Styling the section bottom */
+
+#bottom {
+    display: flex;
+    padding-top: 100;
+    justify-content: space-around;
+}
+
+
+/* Coloring the h1 tag of bottom */
+
+#bottom h1 {
+    color: black;
+}
+
+
+/* Coloring the p tag of bottom */
+
+#bottom p {
+    color: black;
+}
+
+
+/* Setting padding of class bottom-content */
+
+.bottom-content {
+    padding: 50 150;
+}
+
+
+/* Setting padding of section promotion-image */
+
+#promotion-image {
+    padding-right: 200px;
+}
+
+
+/* Setting the background color of footer */
+
+#footer {
+    background-color: #383A53;
+}
+
+
+/* Styling the p tag of footer */
+
+#footer p {
+    text-align: center;
+    color: #797979;
+    padding: 20px;
+}
+
+
+/* Styling the hr tag of footer */
+
+#footer hr {
+    width: 80%;
+    margin: auto;
+}
+
+
+/* Styling list element */
+
+li {
+    display: inline-block;
+    width: auto;
+    padding: 0 10;
+}
