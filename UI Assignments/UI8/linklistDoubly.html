@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<script src="linklistDoubly.js"></script>
+
+<head>
+    <title>DoublyLinklist</title>
+
+</head>
+
+<body>
+    <span id="inputSpan"> <input type="text" placeholder="Write here" id="element"> </span><br/>
+
+    <button type="button" onclick="doubly.addElementFirst(document.getElementById('element').value)">Add Element First</button><br/>
+    <button type="button" onclick="doubly.addElementLast(document.getElementById('element').value)">Add Element Last</button><br/>
+    <button type="button" onclick="doubly.deleteElementFirst()">Remove Element First</button><br/>
+    <button type="button" onclick="doubly.deleteElementOfValue(document.getElementById('element').value)">Remove Element By Value</button><br/>
+    <button type="button" onclick="doubly.deleteElementLast()">Remove Element Last</button><br/>
+
+    <p id="show">List is Empty</p>
+</body>
+
+</html>
