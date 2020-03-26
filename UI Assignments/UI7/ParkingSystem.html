@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script type="text/javascript" src="ParkingSystem.js"></script>
+    <link rel="icon" href="https://image.shutterstock.com/image-vector/car-parking-flat-icon-sign-260nw-282914162.jpg" sizes="19x19">
+</head>
+
+<body>
+    <!-- heading of page  -->
+    <h1>METACUBE PARKING SYSTEM</h1>
+
+    <!-- division for all input details -->
+    <div id="formForAllInput" class="employee">
+        <h3 id="idLabel"> Please Enter your name : </h3>
+        <span id="box-span"></span><input id="input" type="text" placeholder=""></span>
+
+        <input id="refrenceLink" type="submit" value="submit" onclick="nameCheck()">
+
+    </div>
+
+    <!-- dividion for gender input  -->
+    <div id="formGender" style="display: none;">
+        <h3 id="genderIdLabel"></h3>
+        <label> <input id="maleGender" type="radio" name="gender" value="male">Male</label>
+        <label> <input id="femaleGender" type="radio" name="gender" value="female">Female</label>
+        <input type="submit" value="submit" id="refrenceLink" onclick="genderCheck()">
+
+    </div>
+
+    <!-- division for selection of vehicle type  -->
+    <div id="selectVehicleType" style="display:none">
+        <h3 id="vehicleTypeLabel"></h3>
+        <select name="vehicle" id="vehicleType">
+			<option value="">--select value--</option>
+			<option value="Cycle">Cycle</option>
+			<option value="MotorCycle">Motor Cycle</option>
+			<option value="FourWheeler">Four Wheeler</option>
+		</select>
+        <input type="submit" value="submit" id="refrenceLink" onclick="vehicleTypeCheck()">
+    </div>
+
+    <!-- division containing pass price of cycle  -->
+    <div id="selectCyclePassType" style="display:none">
+        <h3> <label id="idLabelCycleType"></label></h3>
+        <br>
+        <select name="pass" id="Cycle">
+			<option value="">--select value--</option>
+			<option value="5">5 Daily</option>
+			<option value="100">100 Monthly</option>
+			<option value="500">500 Yearly</option>
+		</select>
+        <input type="submit" value="submit" id="refrenceLink" onclick="passCheck()">
+    </div>
+
+    <!-- division containing pass price of Motor Cycle  -->
+    <div id="selectTwoPassType" style="display:none">
+        <h3><label id="idLabelTwoType"></label></h3>
+        <br>
+        <select name="pass" id="TwoWheeler">
+			<option value="">--select value--</option>
+			<option value="10">10 Daily</option>
+			<option value="200">200 Monthly</option>
+			<option value="1000">1000 Yearly</option>
+		</select>
+        <input type="submit" value="submit" id="refrenceLink" onclick="passCheck()">
+    </div>
+
+    <!-- division containing pass price of Car  -->
+    <div id="selectFourPassType" style="display:none">
+        <h3><label id="idLabelFourType"></label></h3>
+        <br>
+        <select name="pass" id="FourWheeler">
+			<option value="">--select value--</option>
+			<option value="20">20 Daily</option>
+			<option value="500">500 Monthly</option>
+			<option value="3500">3500 Yearly</option>
+		</select>
+        <input type="submit" value="submit" id="refrenceLink" onclick="passCheck()">
+
+    </div>
+
+    <!-- span for showing final message  -->
+    <h2 id="finalMessage"></h2>
+</body>
+
+</html>
