@@ -71,12 +71,12 @@ public class EmployeeList
 	public static void main(String[] args) 
 	{	
 		EmployeeList employee = new EmployeeList();
-	     employee.addEmployee(9, "devang", "kumba marg");	
+	     employee.addEmployee(9, "deepak", "mansarover");	
 	     employee.addEmployee(2, "rahul", "skit");	
-	     employee.addEmployee(1, "atul", "sector 12");
-	     employee.addEmployee(4, "vinod", "git");	
-	     employee.addEmployee(10, "pankaj", "sector 9");	
-	     employee.addEmployee(8, "rahul", "kumba marg");	
+	     employee.addEmployee(1, "rajat", "jagatpura");
+	     employee.addEmployee(4, "ayush", "git");	
+	     employee.addEmployee(10, "harshit", "sector 9");	
+	     employee.addEmployee(8, "sharad", "vaishali");	
 
 
 		List listOfEmployeesSortedByNaturalOrder = employee.sortByNaturalOrder();
